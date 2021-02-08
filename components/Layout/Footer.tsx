@@ -3,8 +3,8 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className=" text-gray-600 dark:bg-gray-700 border-t-2 border-gray-200 dark:border-gray-700 body-font transition-all duration-500 ease-out">
-      <div className="container px-5 py-8 mx-auto flex items-center justify-end sm:flex-row flex-col">
+    <footer className="text-gray-600 dark:bg-gray-900 border-t-2 border-gray-200 dark:border-gray-700 body-font transition-all duration-500 ease-out">
+      <div className="container px-5 pt-8 pb-4 mx-auto flex items-center justify-end sm:flex-row flex-col">
         <div className="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
           <Image
             src="/assets/reactflix-logo.png"
@@ -99,7 +99,7 @@ const Footer = () => {
           width={92}
           className=""
         />
-        <p className="text-sm text-gray-600 dark:text-gray-400 text-center">
+        <p className="text-sm text-gray-500 dark:text-gray-400 text-center">
           This website uses the TMDb API but is not endorsed or certified by
           TMDb.
         </p>

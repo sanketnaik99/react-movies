@@ -1341,6 +1341,11 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+keen-slider@^5.4.0:
+  version "5.4.0"
+  resolved "https://registry.yarnpkg.com/keen-slider/-/keen-slider-5.4.0.tgz#e5a949e2bb237d7d6b068458dcda59ae9c415254"
+  integrity sha512-gN+lYpaj4vgJr0fIKtJVy/xG2CnjHiY4lixllp32x6LW8QlT1gD4qmzclFBwMn1/LPvnM2UhOFSgAOmBIhPtAQ==
+
 line-column@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/line-column/-/line-column-1.0.2.tgz#d25af2936b6f4849172b312e4792d1d987bc34a2"

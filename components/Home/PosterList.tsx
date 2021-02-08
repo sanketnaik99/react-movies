@@ -1,16 +1,19 @@
 import axios from "axios";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import { BASE_URL, IMAGE_BASE } from "../../pages/_app";
-import { Movie, MovieResult, TVShow, TVResult } from "../../types/types";
+import { BASE_URL, THUMB_IMAGE_BASE } from "../../constants/api_constants";
+import { TVResult, TVShow } from "../../types/tv";
+import { Movie, MovieResult } from "../../types/movie";
 import ErrorCard from "../Shared/ErrorCard";
 import LoadingPoster from "../Shared/LoadingPoster";
 
 interface Props {
   title: string;
   endpoint: string;
+  type: string;
 }
 
-const PosterList: React.FC<Props> = ({ title, endpoint }) => {
+const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
   // Popular Movies State
   const [isLoadingList, setLoadingList] = useState(true);
   const [list, setList] = useState<Movie[] & TVShow[]>([]);
@@ -37,18 +40,26 @@ const PosterList: React.FC<Props> = ({ title, endpoint }) => {
       });
   }, []);
 
+  // Display Loading Poster if -> isLoadingList === true
+  // Display Posters if -> isLoadingList === false && list !== null
+  // Else -> Display ErrorCard
   const posterList = isLoadingList ? (
     Array(20)
       .fill(0)
       .map((_, index) => <LoadingPoster key={index} />)
   ) : list ? (
     list.map((item) => (
-      <div
-        key={item.id}
-        className="h-60 w-40 flex flex-col bg-gray-200 items-center justify-center mb-3 text-gray-400 cursor-pointer rounded-xl overflow-hidden"
-      >
-        <img src={`${IMAGE_BASE}${item.poster_path}`} alt={item.title} />
-      </div>
+      <Link href={`${type}/${item.id}`}>
+        <div
+          key={item.id}
+          className="h-60 w-40 flex flex-col bg-gray-200 items-center justify-center mb-3 text-gray-400 cursor-pointer rounded-xl overflow-hidden"
+        >
+          <img
+            src={`${THUMB_IMAGE_BASE}${item.poster_path}`}
+            alt={item.title}
+          />
+        </div>
+      </Link>
     ))
   ) : (
     <ErrorCard title={title} />

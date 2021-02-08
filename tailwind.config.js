@@ -3,15 +3,20 @@ module.exports = {
   darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
-      extend: {
-        fontFamily: {
-          heading: ["Raleway"],
+      colors: {
+        reactflix: {
+          start: "#1E9AFE",
+          end: "#60DFCD",
         },
+      },
+      fontFamily: {
+        heading: ["Raleway"],
       },
     },
   },
   variants: {
     scrollbar: ["dark", "rounded"],
+    backgroundOpacity: ["dark"],
   },
   plugins: [require("tailwind-scrollbar")],
 };
