@@ -30,6 +30,7 @@ const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
       })
       .then((res) => {
         setList(res.data.results);
+        console.log(res.data.results);
         setLoadingList(false);
       })
       .catch((err) => {
@@ -50,10 +51,16 @@ const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
     list.map((item) => (
       <Link href={`${type}/${item.id}`} key={item.id}>
         <div className="h-60 w-40 flex flex-col bg-gray-200 items-center justify-center mb-3 text-gray-400 cursor-pointer rounded-xl overflow-hidden">
-          <img
-            src={`${THUMB_IMAGE_BASE}${item.poster_path}`}
-            alt={item.title}
-          />
+          {item.poster_path ? (
+            <img
+              src={`${THUMB_IMAGE_BASE}${item.poster_path}`}
+              alt={item.title}
+            />
+          ) : (
+            <div className="flex h-full w-full flex-row items-center justify-center text-gray-200 bg-gradient-to-br from-reactflix-start to-reactflix-end text-center font-heading font-bold text-xl px-2">
+              {item.title || item["name"]}
+            </div>
+          )}
         </div>
       </Link>
     ))
@@ -63,10 +70,10 @@ const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
 
   return (
     <>
-      <h1 className="ml-4 lg:ml-8 text-3xl font-heading font-extrabold mt-2 md:mt-8">
-        {title}
+      <h1 className="text-3xl font-heading font-extrabold mt-2 md:mt-8">
+        {list.length > 0 ? title : ""}
       </h1>
-      <div className="grid grid-flow-col gap-2 overflow-x-auto ml-4 mr-1 lg:ml-8 lg:mr-8 mt-3 pb-2 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-300 scrollbar-track-gray-200 dark:scrollbar-track-gray-700 dark:scrollbar-thumb-gray-400 hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-300">
+      <div className="grid grid-flow-col gap-2 overflow-x-auto mt-3 pb-2 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-thumb-gray-300 scrollbar-track-gray-200 dark:scrollbar-track-gray-700 dark:scrollbar-thumb-gray-400 hover:scrollbar-thumb-gray-400 dark:hover:scrollbar-thumb-gray-300">
         {posterList}
       </div>
     </>

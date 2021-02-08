@@ -6,6 +6,7 @@ import {
 } from "../../constants/api_constants";
 import { Backdrop, Genre } from "../../types/types";
 import "keen-slider/keen-slider.min.css";
+import PosterList from "../Home/PosterList";
 
 interface Props {
   posterPath: string;
@@ -15,6 +16,9 @@ interface Props {
   backdropPath: string;
   backdrops: Backdrop[];
   genres: Genre[];
+  similarTitle: string;
+  similarEndpoint: string;
+  similarType: string;
 }
 
 const Details: React.FC<Props> = ({
@@ -25,6 +29,9 @@ const Details: React.FC<Props> = ({
   backdropPath,
   backdrops,
   genres,
+  similarTitle,
+  similarEndpoint,
+  similarType,
   children,
 }) => {
   const [pause, setPause] = React.useState(false);
@@ -80,7 +87,7 @@ const Details: React.FC<Props> = ({
 
   return (
     <div
-      className="min-h-screen flex flex-row sm:py-5 md:py-8 items-center bg-fixed"
+      className="min-h-screen flex flex-row sm:py-5 px-2 md:py-8 items-center bg-fixed"
       style={{
         backgroundImage: `url(${ORIGINAL_IMAGE_BASE}/${backdropPath})`,
         backgroundPosition: "center center",
@@ -88,7 +95,7 @@ const Details: React.FC<Props> = ({
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="container px-5 py-10 my-10 sm:my-auto mx-2 sm:mx-auto flex flex-col bg-gray-200 bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 rounded-3xl">
+      <div className="container sm:px-2 py-10 my-10 sm:my-auto mx-auto flex flex-col bg-gray-200 bg-opacity-80 dark:bg-gray-900 dark:bg-opacity-80 rounded-3xl">
         <div className="mx-auto">
           <div className="flex flex-col sm:flex-row">
             {/* Poster, Title, Genres and Description */}
@@ -129,6 +136,13 @@ const Details: React.FC<Props> = ({
               </div>
             </div>
           </div>
+        </div>
+        <div className="ml-3 mr-1">
+          <PosterList
+            title={similarTitle}
+            endpoint={similarEndpoint}
+            type={similarType}
+          />
         </div>
       </div>
     </div>

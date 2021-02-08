@@ -1,13 +1,19 @@
 import Head from "next/head";
 import PosterList from "../components/Home/PosterList";
+import MetaTags from "../components/meta/MetaTags";
 import { MOVIE_TYPE, TV_TYPE } from "../constants/api_constants";
 
 const Home = () => {
   return (
-    <div className="mb-10">
+    <div className="mb-10 ml-4 lg:ml-8 mr-1 lg:mr-4">
       <Head>
-        <title>Movies</title>
-        <link rel="icon" href="/favicon.ico" />
+        <MetaTags
+          title="ReactFlix"
+          description="ReactFlix is a movie library made with ReactJS, Next.js, and TailwindCSS with data from TMDB API."
+          URL="https://movies.sanketnaik.dev/"
+          imageURL="https://movies.sanketnaik.dev/assets/reactflix-banner.png"
+        />
+        <link rel="icon" href="https://movies.sanketnaik.dev/favicon.ico" />
       </Head>
       <PosterList
         title="Popular Movies"
