@@ -22,6 +22,9 @@ const Layout: React.FC = ({ children }) => {
     if (currentTheme !== storedTheme && hasLoaded) {
       localStorage.setItem("theme", currentTheme);
     }
+
+    // Set Loaded = true after first run
+    setLoaded(true);
   }, [currentTheme]);
 
   return (
@@ -40,7 +43,7 @@ const Layout: React.FC = ({ children }) => {
       <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500 ease-out">
         {children}
       </div>
-      <Footer hasDarkModeEnabled={currentTheme === "dark"} />
+      <Footer />
     </div>
   );
 };

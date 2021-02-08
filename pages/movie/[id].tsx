@@ -1,19 +1,19 @@
 import axios, { AxiosResponse } from "axios";
 import { GetServerSideProps } from "next";
 import React from "react";
-import { BASE_URL } from "../../constants/api_constants";
-import { TVDetailsResult, TVImages } from "../../types/tv";
 import Details from "../../components/Shared/Details";
+import { BASE_URL } from "../../constants/api_constants";
+import { MovieDetailsResult, MovieImages } from "../../types/movie";
 
 interface Props {
-  details: TVDetailsResult;
-  images: TVImages;
+  details: MovieDetailsResult;
+  images: MovieImages;
 }
 
-const TVDetails: React.FC<Props> = ({ details, images }) => {
+const MovieDetails: React.FC<Props> = ({ details, images }) => {
   return (
     <Details
-      name={details.name}
+      name={details.title}
       posterPath={details.poster_path}
       genres={details.genres}
       overview={details.overview}
@@ -26,13 +26,13 @@ const TVDetails: React.FC<Props> = ({ details, images }) => {
           Rating
         </div>
         <div className="text-lg sm:text-xl font-bold font-heading text-gray-800 dark:text-gray-200">
-          Seasons
+          Status
         </div>
-        <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-12 border-t-2 border-gray-400 dark:border-gray-700">
+        <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-12 border-t border-gray-600 dark:border-gray-500">
           {details.vote_average}/10
         </div>
-        <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-12 border-t-2 border-gray-400 dark:border-gray-700">
-          {details.number_of_seasons}
+        <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-12 border-t border-gray-600 dark:border-gray-500">
+          {details.status}
         </div>
       </div>
     </Details>
@@ -40,8 +40,8 @@ const TVDetails: React.FC<Props> = ({ details, images }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const details: AxiosResponse<TVDetailsResult> = await axios.get<TVDetailsResult>(
-    `${BASE_URL}tv/${context.params.id}`,
+  const details: AxiosResponse<MovieDetailsResult> = await axios.get<MovieDetailsResult>(
+    `${BASE_URL}movie/${context.params.id}`,
     {
       params: {
         api_key: process.env.NEXT_PUBLIC_TMDB_KEY,
@@ -49,8 +49,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
       },
     }
   );
-  const images: AxiosResponse<TVImages> = await axios.get<TVImages>(
-    `${BASE_URL}tv/${context.params.id}/images`,
+  const images: AxiosResponse<MovieImages> = await axios.get<MovieImages>(
+    `${BASE_URL}movie/${context.params.id}/images`,
     {
       params: {
         api_key: process.env.NEXT_PUBLIC_TMDB_KEY,
@@ -60,4 +60,4 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return { props: { details: details.data, images: images.data } };
 };
 
-export default TVDetails;
+export default MovieDetails;

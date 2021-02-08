@@ -29,7 +29,6 @@ const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
         },
       })
       .then((res) => {
-        console.log(res);
         setList(res.data.results);
         setLoadingList(false);
       })
@@ -49,11 +48,8 @@ const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
       .map((_, index) => <LoadingPoster key={index} />)
   ) : list ? (
     list.map((item) => (
-      <Link href={`${type}/${item.id}`}>
-        <div
-          key={item.id}
-          className="h-60 w-40 flex flex-col bg-gray-200 items-center justify-center mb-3 text-gray-400 cursor-pointer rounded-xl overflow-hidden"
-        >
+      <Link href={`${type}/${item.id}`} key={item.id}>
+        <div className="h-60 w-40 flex flex-col bg-gray-200 items-center justify-center mb-3 text-gray-400 cursor-pointer rounded-xl overflow-hidden">
           <img
             src={`${THUMB_IMAGE_BASE}${item.poster_path}`}
             alt={item.title}
