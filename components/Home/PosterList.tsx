@@ -30,7 +30,6 @@ const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
       })
       .then((res) => {
         setList(res.data.results);
-        console.log(res.data.results);
         setLoadingList(false);
       })
       .catch((err) => {
