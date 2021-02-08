@@ -7,6 +7,7 @@ const Home = () => {
   return (
     <div className="mb-10 ml-4 lg:ml-8 mr-1 lg:mr-4">
       <Head>
+        <title>ReactFlix</title>
         <MetaTags
           title="ReactFlix"
           description="ReactFlix is a movie library made with ReactJS, Next.js, and TailwindCSS with data from TMDB API."

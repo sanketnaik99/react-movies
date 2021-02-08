@@ -8,6 +8,7 @@ const NotFound = () => {
   return (
     <>
       <Head>
+        <title>404 - Page Not Found</title>
         <MetaTags
           title="404 - Page Not Found"
           description="ReactFlix is a movie library made with ReactJS, Next.js, and TailwindCSS with data from TMDB API."

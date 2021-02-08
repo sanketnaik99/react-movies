@@ -16,6 +16,7 @@ const TVDetails: React.FC<Props> = ({ details, images }) => {
   return (
     <>
       <Head>
+        <title>{details.name}</title>
         <MetaTags
           title={details.name}
           description={details.overview}

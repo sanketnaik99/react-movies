@@ -11,6 +11,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <title>ReactFlix</title>
           <MetaTags
             title="ReactFlix"
             description="ReactFlix is a movie library made with ReactJS, Next.js, and TailwindCSS with data from TMDB API."

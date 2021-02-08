@@ -10,7 +10,6 @@ interface Props {
 const MetaTags: React.FC<Props> = ({ title, description, URL, imageURL }) => {
   return (
     <>
-      <title>{title}</title>
       <meta name="title" content={title} />
       <meta name="description" content={description} />
 
