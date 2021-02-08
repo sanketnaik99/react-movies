@@ -21,7 +21,7 @@ const TVDetails: React.FC<Props> = ({ details, images }) => {
           title={details.name}
           description={details.overview}
           URL={`https://movies.sanketnaik.dev/tv/${details.id}`}
-          imageURL={details.backdrop_path}
+          imageURL={`https://image.tmdb.org/t/p/w500/${details.backdrop_path}`}
         />
         <link rel="icon" href="https://movies.sanketnaik.dev/favicon.ico" />
       </Head>
