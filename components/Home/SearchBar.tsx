@@ -80,6 +80,7 @@ const SearchBar = () => {
           placeholder="Search for Movies and TV Shows..."
           className="px-3 py-3 placeholder-gray-800 text-gray-800 relative bg-gray-100 rounded text-sm shadow outline-none focus:outline-none focus:shadow-outline w-full pl-10 dark:placeholder-gray-200 dark:bg-gray-700 dark:text-gray-200"
           onChange={handleChange}
+          aria-label="Search for Movies and TV Shows..."
         />
         <div className="flex w-full dark:bg-gray-700 bg-gray-100 z-10 rounded-md flex-col absolute top-12 left-0">
           {resultSuggestions}

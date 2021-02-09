@@ -53,7 +53,7 @@ const PosterList: React.FC<Props> = ({ title, endpoint, type }) => {
           {item.poster_path ? (
             <img
               src={`${THUMB_IMAGE_BASE}${item.poster_path}`}
-              alt={item.title}
+              alt={item.title || item["name"]}
             />
           ) : (
             <div className="flex h-full w-full flex-row items-center justify-center text-gray-200 bg-gradient-to-br from-reactflix-start to-reactflix-end text-center font-heading font-bold text-xl px-2">
