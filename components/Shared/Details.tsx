@@ -78,7 +78,7 @@ const Details: React.FC<Props> = ({
 
   const imageList = backdrops.map((image) => (
     <div key={image.file_path} className="keen-slider__slide">
-      <LazyImage src={`${ORIGINAL_IMAGE_BASE}/${image.file_path}`} alt={name} />
+      <img src={`${ORIGINAL_IMAGE_BASE}/${image.file_path}`} alt={name} />
     </div>
   ));
 
@@ -97,8 +97,7 @@ const Details: React.FC<Props> = ({
           <div className="flex flex-col sm:flex-row">
             {/* Poster, Title, Genres and Description */}
             <div className="sm:w-3/6 text-center sm:pr-8 sm:py-8">
-              <div className="w-32 rounded-xl overflow-hidden inline-flex items-center justify-center bg-transparent text-gray-400 h-52">
-                {/* <img src={`${THUMB_IMAGE_BASE}/${posterPath}`} alt={name} /> */}
+              <div className="w-32 rounded-lg overflow-hidden inline-flex items-center justify-center bg-transparent text-gray-400">
                 <LazyImage
                   src={`${THUMB_IMAGE_BASE}/${posterPath}`}
                   alt={name}

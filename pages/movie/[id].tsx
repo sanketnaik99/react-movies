@@ -44,10 +44,10 @@ const MovieDetails: React.FC<Props> = ({ details, images }) => {
           <div className="text-lg sm:text-xl font-bold font-heading text-gray-800 dark:text-gray-200">
             Status
           </div>
-          <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-12 border-t border-gray-600 dark:border-gray-500">
+          <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-auto border-t border-gray-600 dark:border-gray-500">
             {details.vote_average}/10
           </div>
-          <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-12 border-t border-gray-600 dark:border-gray-500">
+          <div className="text-xl sm:text-3xl font-bold font-heading mx-5 md:mx-auto border-t border-gray-600 dark:border-gray-500">
             {details.status}
           </div>
         </div>
