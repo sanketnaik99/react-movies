@@ -22,3 +22,8 @@ export interface Poster {
   vote_count: number;
   width: number;
 }
+
+export interface SearchResult {
+  title: string;
+  path: string;
+}

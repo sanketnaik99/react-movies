@@ -11,7 +11,6 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <title>ReactFlix</title>
           <link rel="icon" href="https://movies.sanketnaik.dev/favicon.ico" />
         </Head>
         <body>

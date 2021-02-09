@@ -137,7 +137,7 @@ const Details: React.FC<Props> = ({
             </div>
           </div>
         </div>
-        <div className="ml-3 mr-1">
+        <div className="ml-3 mr-1 mt-5 sm:mt-2">
           <PosterList
             title={similarTitle}
             endpoint={similarEndpoint}

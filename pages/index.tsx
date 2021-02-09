@@ -1,5 +1,6 @@
 import Head from "next/head";
 import PosterList from "../components/Home/PosterList";
+import SearchBar from "../components/Home/SearchBar";
 import MetaTags from "../components/meta/MetaTags";
 import { MOVIE_TYPE, TV_TYPE } from "../constants/api_constants";
 
@@ -16,6 +17,7 @@ const Home = () => {
         />
         <link rel="icon" href="https://movies.sanketnaik.dev/favicon.ico" />
       </Head>
+      <SearchBar />
       <PosterList
         title="Popular Movies"
         endpoint="movie/popular"

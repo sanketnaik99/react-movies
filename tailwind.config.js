@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       colors: {
         reactflix: {
-          start: "#1E9AFE",
-          end: "#60DFCD",
+          start: "#48A9FE",
+          end: "#0BEEF9",
         },
       },
       fontFamily: {
