@@ -1,34 +1,47 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![Reactflix](docs/images/github-banner.png)
 
-## Getting Started
+# ReactFlix
+![Website](https://img.shields.io/website?logo=React&style=for-the-badge&url=https%3A%2F%2Fmovies.sanketnaik.dev) &nbsp;&nbsp; [![Netlify Status](https://api.netlify.com/api/v1/badges/4e5ec427-f4d1-4227-a4fe-420a8deb56fe/deploy-status)](https://app.netlify.com/sites/movies-sanketnaikdev/deploys)
 
-First, run the development server:
+A movie library built using NextJS (a ReactJS Framework), TailwindCSS and TypeScript. The website is powered by the TMDB API. 
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+# Contents
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- [Home Page](#home-page)
+- [Details Page](#details-page)
+- [Search](#search)
+- [Dark Mode](#dark-mode)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+# Technologies Used
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+| Name        | Description |
+| ----------- | ---------------- |
+| Next.js     | An open-source React front-end development web framework that enables functionality such as server-side rendering and generating static websites for React based web applications. |
+| TailwindCSS | A utility-first CSS framework packed with classes that can be composed to build any design, directly in your markup. |
+| TypeScript  | It is a strict syntactical superset of JavaScript and adds optional static typing to the language. |
+| TMDB API    | The TMDb API is a resource for developers to integrate movie, TV show and cast data along with posters or movie fan art.|
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+# Home Page
+![Home Page](docs/images/home-page.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+ReactFlix's home page displays multiple lists of movies and tv shows such as the popular movies, popular tv shows, etc. A user can click on a specific movie or tv show and view more details about it. The home page also contains the [search bar](#search) which lets the user search for a movie or tv show.  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Details Page
+![Details Page](docs/images/details-page-light.png)
 
-## Deploy on Vercel
+The details page displays more information about a selected movie or tv show. This page contains information such as the genres, description, rating, number of seasons (for a tv show) or release status (for a movie). The page also displays similar movies or tv shows as recommendations for the user.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Search
+![Search](docs/images/search-light.png)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+The search bar is present on the home page. The user can start typing and they will be shown results based on their input. The debounce method is used to send a query if the user stops typing for a while (200ms) and the data returned from the query is displayed to the user as a list.
+
+# Dark Mode
+![Home Page Dark Mode](docs/images/dark-mode-home.png)
+
+ReactFlix uses tailwind's in-built dark mode support to provide a dark mode experience for the user. When the user clicks on the theme toggle button on the top-right part of the page, the theme for the entire application is changed with a smooth transition. You can view more screenshots of ReactFlix's dark mode below.
+
+![Details Page Dark Mode](docs/images/details-page-dark.png)
+![Search Dark](docs/images/search-dark.png)
