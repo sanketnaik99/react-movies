@@ -7,6 +7,7 @@ A movie library built using NextJS (a ReactJS Framework), TailwindCSS and TypeSc
 
 # Contents
 
+- [Technologies Used](#technologies-used)
 - [Home Page](#home-page)
 - [Details Page](#details-page)
 - [Search](#search)
