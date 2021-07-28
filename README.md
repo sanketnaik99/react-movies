@@ -1,7 +1,7 @@
 ![Reactflix](docs/images/github-banner.png)
 
 # ReactFlix
-![Website](https://img.shields.io/website?logo=React&style=for-the-badge&url=https%3A%2F%2Fmovies.sanketnaik.dev) &nbsp;&nbsp; [![Netlify Status](https://api.netlify.com/api/v1/badges/4e5ec427-f4d1-4227-a4fe-420a8deb56fe/deploy-status)](https://app.netlify.com/sites/movies-sanketnaikdev/deploys)
+[![Website](https://img.shields.io/website?logo=React&style=for-the-badge&url=https%3A%2F%2Fmovies.sanketnaik.dev)](https://movies.sanketnaik.dev) &nbsp;&nbsp; [![Netlify Status](https://api.netlify.com/api/v1/badges/4e5ec427-f4d1-4227-a4fe-420a8deb56fe/deploy-status)](https://app.netlify.com/sites/movies-sanketnaikdev/deploys)
 
 A movie library built using NextJS (a ReactJS Framework), TailwindCSS and TypeScript. The website is powered by the TMDB API. 
 
